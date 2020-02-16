@@ -16,24 +16,29 @@ final class NetworkResource<Value>: ObservableObject {
     @Published var error: Error?
 
     private let urlRequest: URLRequest
+    private let cache: URLCache?
     private let parseResponse: (Data, URLResponse) throws -> Value
 
     private var refreshCancellable: Cancellable?
 
-    init(urlRequest: URLRequest, parseResponse: @escaping (Data, URLResponse) throws -> Value) {
+    init(urlRequest: URLRequest, cache: URLCache? = .shared, parseResponse: @escaping (Data, URLResponse) throws -> Value) {
         self.urlRequest = urlRequest
+        self.cache = cache
         self.parseResponse = parseResponse
     }
 
-    convenience init(url: URL, parseResponse: @escaping (Data, URLResponse) throws -> Value) {
+    convenience init(url: URL, cache: URLCache? = .shared, parseResponse: @escaping (Data, URLResponse) throws -> Value) {
         let urlRequest = URLRequest(url: url)
-        self.init(urlRequest: urlRequest, parseResponse: parseResponse)
+        self.init(urlRequest: urlRequest,
+                  cache: cache,
+                  parseResponse: parseResponse)
     }
 
     func refresh() {
         isLoading = true
         error = nil
-        refreshCancellable = URLSession.shared.dataTaskPublisher(for: urlRequest)
+        refreshCancellable = responsePublisher
+            .handleEvents(receiveOutput: storeCachedResponse)
             .tryMap(parseResponse)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
@@ -50,13 +55,29 @@ final class NetworkResource<Value>: ObservableObject {
         refreshCancellable?.cancel()
         refreshCancellable = nil
     }
+
+    private var responsePublisher: AnyPublisher<(data: Data, response: URLResponse), URLError> {
+        if let cachedResponse = cache?.cachedResponse(for: urlRequest) {
+            return Just((data: cachedResponse.data, response: cachedResponse.response))
+                .setFailureType(to: URLError.self)
+                .eraseToAnyPublisher()
+        } else {
+            return URLSession.shared.dataTaskPublisher(for: urlRequest)
+                .eraseToAnyPublisher()
+        }
+    }
+
+    private func storeCachedResponse(data: Data, response: URLResponse) {
+        let cachedResponse = CachedURLResponse(response: response, data: data)
+        cache?.storeCachedResponse(cachedResponse, for: urlRequest)
+    }
 }
 
 extension NetworkResource where Value: Decodable {
-    convenience init(url: URL, decoder: JSONDecoder) {
+    convenience init(url: URL, cache: URLCache? = .shared, decoder: JSONDecoder) {
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-        self.init(urlRequest: urlRequest) { data, _ -> Value in
+        self.init(urlRequest: urlRequest, cache: cache) { data, _ -> Value in
             return try decoder.decode(Value.self, from: data)
         }
     }
@@ -69,8 +90,8 @@ struct ImageDecodingError: Error, LocalizedError {
 }
 
 extension NetworkResource where Value == UIImage {
-    convenience init(imageURL: URL) {
-        self.init(url: imageURL) { data, response in
+    convenience init(imageURL: URL, cache: URLCache? = .shared) {
+        self.init(url: imageURL, cache: cache) { data, response in
             if let image = UIImage(data: data) {
                 return image
             }
