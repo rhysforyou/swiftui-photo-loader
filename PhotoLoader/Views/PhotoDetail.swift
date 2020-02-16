@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PhotoDetail: View {
     let metadata: PhotoMetadata
-    @ObservedObject var imageResource: NetworkResource<UIImage>
+    @ObservedObject var imageResource: NetworkResource<Image>
 
     init(metadata: PhotoMetadata) {
         self.metadata = metadata
@@ -89,7 +89,7 @@ private struct PhotoDetailMetadata: View {
 
 private struct PhotoDetailImage: View {
     let metadata: PhotoMetadata
-    let image: UIImage?
+    let image: Image?
 
     var body: some View {
         HStack {
@@ -97,8 +97,7 @@ private struct PhotoDetailImage: View {
             ZStack {
                 Color(UIColor.secondarySystemBackground)
                 if image != nil {
-                    Image(uiImage: image!)
-                        .resizable()
+                    image!.resizable()
                 }
             }
             .aspectRatio(CGFloat(self.metadata.width) / CGFloat(self.metadata.height), contentMode: .fit)

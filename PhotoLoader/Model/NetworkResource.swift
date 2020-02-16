@@ -41,6 +41,7 @@ final class NetworkResource<Value>: ObservableObject {
             .handleEvents(receiveOutput: storeCachedResponse)
             .tryMap(parseResponse)
             .receive(on: DispatchQueue.main)
+            .print()
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion {
                     self.error = error
@@ -89,11 +90,11 @@ struct ImageDecodingError: Error, LocalizedError {
     }
 }
 
-extension NetworkResource where Value == UIImage {
+extension NetworkResource where Value == Image {
     convenience init(imageURL: URL, cache: URLCache? = .shared) {
         self.init(url: imageURL, cache: cache) { data, response in
             if let image = UIImage(data: data) {
-                return image
+                return Image(uiImage: image)
             }
             throw ImageDecodingError()
         }

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Rhys Powell. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct PhotoMetadata: Decodable, Identifiable {
     var id: String
@@ -20,6 +20,13 @@ struct PhotoMetadata: Decodable, Identifiable {
         case id, author, width, height
         case downloadURL = "downloadUrl"
         case contentURL = "url"
+    }
+}
+
+extension PhotoMetadata {
+    var thumbnailURL: URL {
+        let size = Int(44 * UIScreen.main.scale)
+        return URL(string: "https://picsum.photos/id/\(id)/\(size)/\(size)")!
     }
 }
 

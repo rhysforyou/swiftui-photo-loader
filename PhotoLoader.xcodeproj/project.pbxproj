@@ -13,32 +13,13 @@
 		576CD01523F6B775000E18FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 576CD01423F6B775000E18FC /* Assets.xcassets */; };
 		576CD01823F6B775000E18FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 576CD01723F6B775000E18FC /* Preview Assets.xcassets */; };
 		576CD01B23F6B775000E18FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 576CD01923F6B775000E18FC /* LaunchScreen.storyboard */; };
-		576CD02623F6B775000E18FC /* PhotoLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CD02523F6B775000E18FC /* PhotoLoaderTests.swift */; };
-		576CD03123F6B775000E18FC /* PhotoLoaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CD03023F6B775000E18FC /* PhotoLoaderUITests.swift */; };
 		576CD04123F6B820000E18FC /* PhotoMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CD04023F6B820000E18FC /* PhotoMetadata.swift */; };
 		576CD04323F6B8A8000E18FC /* NetworkResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CD04223F6B8A8000E18FC /* NetworkResource.swift */; };
-		576CD04523F6BB0D000E18FC /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CD04423F6BB0D000E18FC /* StationList.swift */; };
+		576CD04523F6BB0D000E18FC /* PhotoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CD04423F6BB0D000E18FC /* PhotoList.swift */; };
 		576CD04723F6BFE9000E18FC /* PhotoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CD04623F6BFE9000E18FC /* PhotoDetail.swift */; };
 		576CD04923F6C595000E18FC /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CD04823F6C595000E18FC /* ActivityIndicator.swift */; };
 		576CD04C23F77636000E18FC /* URL+Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CD04B23F77636000E18FC /* URL+Static.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		576CD02223F6B775000E18FC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 576CD00323F6B772000E18FC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 576CD00A23F6B772000E18FC;
-			remoteInfo = PhotoLoader;
-		};
-		576CD02D23F6B775000E18FC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 576CD00323F6B772000E18FC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 576CD00A23F6B772000E18FC;
-			remoteInfo = PhotoLoader;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		576CD00B23F6B772000E18FC /* PhotoLoader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoLoader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,15 +30,9 @@
 		576CD01723F6B775000E18FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		576CD01A23F6B775000E18FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		576CD01C23F6B775000E18FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		576CD02123F6B775000E18FC /* PhotoLoaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoLoaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		576CD02523F6B775000E18FC /* PhotoLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLoaderTests.swift; sourceTree = "<group>"; };
-		576CD02723F6B775000E18FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		576CD02C23F6B775000E18FC /* PhotoLoaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoLoaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		576CD03023F6B775000E18FC /* PhotoLoaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLoaderUITests.swift; sourceTree = "<group>"; };
-		576CD03223F6B775000E18FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		576CD04023F6B820000E18FC /* PhotoMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMetadata.swift; sourceTree = "<group>"; };
 		576CD04223F6B8A8000E18FC /* NetworkResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResource.swift; sourceTree = "<group>"; };
-		576CD04423F6BB0D000E18FC /* StationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationList.swift; sourceTree = "<group>"; };
+		576CD04423F6BB0D000E18FC /* PhotoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoList.swift; sourceTree = "<group>"; };
 		576CD04623F6BFE9000E18FC /* PhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetail.swift; sourceTree = "<group>"; };
 		576CD04823F6C595000E18FC /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		576CD04B23F77636000E18FC /* URL+Static.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Static.swift"; sourceTree = "<group>"; };
@@ -71,20 +46,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		576CD01E23F6B775000E18FC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		576CD02923F6B775000E18FC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -92,8 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				576CD00D23F6B772000E18FC /* PhotoLoader */,
-				576CD02423F6B775000E18FC /* PhotoLoaderTests */,
-				576CD02F23F6B775000E18FC /* PhotoLoaderUITests */,
 				576CD00C23F6B772000E18FC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,8 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				576CD00B23F6B772000E18FC /* PhotoLoader.app */,
-				576CD02123F6B775000E18FC /* PhotoLoaderTests.xctest */,
-				576CD02C23F6B775000E18FC /* PhotoLoaderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,29 +89,11 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		576CD02423F6B775000E18FC /* PhotoLoaderTests */ = {
-			isa = PBXGroup;
-			children = (
-				576CD02523F6B775000E18FC /* PhotoLoaderTests.swift */,
-				576CD02723F6B775000E18FC /* Info.plist */,
-			);
-			path = PhotoLoaderTests;
-			sourceTree = "<group>";
-		};
-		576CD02F23F6B775000E18FC /* PhotoLoaderUITests */ = {
-			isa = PBXGroup;
-			children = (
-				576CD03023F6B775000E18FC /* PhotoLoaderUITests.swift */,
-				576CD03223F6B775000E18FC /* Info.plist */,
-			);
-			path = PhotoLoaderUITests;
-			sourceTree = "<group>";
-		};
 		576CD03E23F6B7FB000E18FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				576CD01223F6B772000E18FC /* ContentView.swift */,
-				576CD04423F6BB0D000E18FC /* StationList.swift */,
+				576CD04423F6BB0D000E18FC /* PhotoList.swift */,
 				576CD04623F6BFE9000E18FC /* PhotoDetail.swift */,
 				576CD04823F6C595000E18FC /* ActivityIndicator.swift */,
 			);
@@ -198,42 +137,6 @@
 			productReference = 576CD00B23F6B772000E18FC /* PhotoLoader.app */;
 			productType = "com.apple.product-type.application";
 		};
-		576CD02023F6B775000E18FC /* PhotoLoaderTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 576CD03823F6B775000E18FC /* Build configuration list for PBXNativeTarget "PhotoLoaderTests" */;
-			buildPhases = (
-				576CD01D23F6B775000E18FC /* Sources */,
-				576CD01E23F6B775000E18FC /* Frameworks */,
-				576CD01F23F6B775000E18FC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				576CD02323F6B775000E18FC /* PBXTargetDependency */,
-			);
-			name = PhotoLoaderTests;
-			productName = PhotoLoaderTests;
-			productReference = 576CD02123F6B775000E18FC /* PhotoLoaderTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		576CD02B23F6B775000E18FC /* PhotoLoaderUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 576CD03B23F6B775000E18FC /* Build configuration list for PBXNativeTarget "PhotoLoaderUITests" */;
-			buildPhases = (
-				576CD02823F6B775000E18FC /* Sources */,
-				576CD02923F6B775000E18FC /* Frameworks */,
-				576CD02A23F6B775000E18FC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				576CD02E23F6B775000E18FC /* PBXTargetDependency */,
-			);
-			name = PhotoLoaderUITests;
-			productName = PhotoLoaderUITests;
-			productReference = 576CD02C23F6B775000E18FC /* PhotoLoaderUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -246,14 +149,6 @@
 				TargetAttributes = {
 					576CD00A23F6B772000E18FC = {
 						CreatedOnToolsVersion = 11.4;
-					};
-					576CD02023F6B775000E18FC = {
-						CreatedOnToolsVersion = 11.4;
-						TestTargetID = 576CD00A23F6B772000E18FC;
-					};
-					576CD02B23F6B775000E18FC = {
-						CreatedOnToolsVersion = 11.4;
-						TestTargetID = 576CD00A23F6B772000E18FC;
 					};
 				};
 			};
@@ -271,8 +166,6 @@
 			projectRoot = "";
 			targets = (
 				576CD00A23F6B772000E18FC /* PhotoLoader */,
-				576CD02023F6B775000E18FC /* PhotoLoaderTests */,
-				576CD02B23F6B775000E18FC /* PhotoLoaderUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -288,20 +181,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		576CD01F23F6B775000E18FC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		576CD02A23F6B775000E18FC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -310,7 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				576CD04C23F77636000E18FC /* URL+Static.swift in Sources */,
-				576CD04523F6BB0D000E18FC /* StationList.swift in Sources */,
+				576CD04523F6BB0D000E18FC /* PhotoList.swift in Sources */,
 				576CD00F23F6B772000E18FC /* AppDelegate.swift in Sources */,
 				576CD04323F6B8A8000E18FC /* NetworkResource.swift in Sources */,
 				576CD04123F6B820000E18FC /* PhotoMetadata.swift in Sources */,
@@ -321,36 +200,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		576CD01D23F6B775000E18FC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				576CD02623F6B775000E18FC /* PhotoLoaderTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		576CD02823F6B775000E18FC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				576CD03123F6B775000E18FC /* PhotoLoaderUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		576CD02323F6B775000E18FC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 576CD00A23F6B772000E18FC /* PhotoLoader */;
-			targetProxy = 576CD02223F6B775000E18FC /* PBXContainerItemProxy */;
-		};
-		576CD02E23F6B775000E18FC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 576CD00A23F6B772000E18FC /* PhotoLoader */;
-			targetProxy = 576CD02D23F6B775000E18FC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		576CD01923F6B775000E18FC /* LaunchScreen.storyboard */ = {
@@ -520,90 +370,6 @@
 			};
 			name = Release;
 		};
-		576CD03923F6B775000E18FC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6752H6VL8N;
-				INFOPLIST_FILE = PhotoLoaderTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rpowell.PhotoLoaderTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoLoader.app/PhotoLoader";
-			};
-			name = Debug;
-		};
-		576CD03A23F6B775000E18FC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6752H6VL8N;
-				INFOPLIST_FILE = PhotoLoaderTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rpowell.PhotoLoaderTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoLoader.app/PhotoLoader";
-			};
-			name = Release;
-		};
-		576CD03C23F6B775000E18FC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6752H6VL8N;
-				INFOPLIST_FILE = PhotoLoaderUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rpowell.PhotoLoaderUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PhotoLoader;
-			};
-			name = Debug;
-		};
-		576CD03D23F6B775000E18FC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6752H6VL8N;
-				INFOPLIST_FILE = PhotoLoaderUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rpowell.PhotoLoaderUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PhotoLoader;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -621,24 +387,6 @@
 			buildConfigurations = (
 				576CD03623F6B775000E18FC /* Debug */,
 				576CD03723F6B775000E18FC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		576CD03823F6B775000E18FC /* Build configuration list for PBXNativeTarget "PhotoLoaderTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				576CD03923F6B775000E18FC /* Debug */,
-				576CD03A23F6B775000E18FC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		576CD03B23F6B775000E18FC /* Build configuration list for PBXNativeTarget "PhotoLoaderUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				576CD03C23F6B775000E18FC /* Debug */,
-				576CD03D23F6B775000E18FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

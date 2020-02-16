@@ -1,5 +1,5 @@
 //
-//  StationList.swift
+//  PhotoList.swift
 //  PhotoLoader
 //
 //  Created by Rhys Powell on 14/2/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct StationList: View {
+struct PhotoList: View {
     @ObservedObject var resource: NetworkResource<[PhotoMetadata]>
 
     init() {
@@ -41,7 +41,7 @@ struct StationList: View {
 
             ForEach(resource.value ?? []) { metadata in
                 NavigationLink(destination: PhotoDetail(metadata: metadata)) {
-                    Text(metadata.author)
+                    PhotoListItem(metadata: metadata)
                 }
             }
         }
@@ -52,8 +52,42 @@ struct StationList: View {
     }
 }
 
-struct StationList_Previews: PreviewProvider {
-    static var previews: some View {
-        StationList()
+struct PhotoListItem: View {
+    let metadata: PhotoMetadata
+    @ObservedObject var thumbnailResource: NetworkResource<Image>
+
+    init(metadata: PhotoMetadata) {
+        self.metadata = metadata
+        self.thumbnailResource = NetworkResource(imageURL: metadata.thumbnailURL)
+    }
+
+    var body: some View {
+        HStack {
+            Group {
+                if thumbnailResource.value != nil {
+                    thumbnailResource.value!
+                        .resizable()
+                } else {
+                    Color(UIColor.secondarySystemBackground)
+                }
+            }
+            .frame(width: 44, height: 44)
+            .cornerRadius(8)
+            Text(metadata.author)
+        }
+        .onAppear(perform: thumbnailResource.refresh)
+        .onDisappear(perform: thumbnailResource.cancel)
     }
 }
+
+#if DEBUG
+
+struct PhotoListItem_Previews: PreviewProvider {
+    static var previews: some View {
+        PhotoListItem(metadata: .fixtureData)
+            .padding()
+            .previewLayout(.sizeThatFits)
+    }
+}
+
+#endif
