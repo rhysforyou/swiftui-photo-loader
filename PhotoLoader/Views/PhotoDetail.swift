@@ -8,49 +8,62 @@
 
 import SwiftUI
 
-struct ImageDecodingError: Error, LocalizedError {
-    var errorDescription: String? {
-        return "Unable to decode image data"
-    }
-}
-
 struct PhotoDetail: View {
     let metadata: PhotoMetadata
     @ObservedObject var imageResource: NetworkResource<UIImage>
 
     init(metadata: PhotoMetadata) {
         self.metadata = metadata
-        self.imageResource = NetworkResource(url: metadata.downloadURL) { data, response in
-            if let image = UIImage(data: data) {
-                return image
-            }
-            throw ImageDecodingError()
-        }
+        self.imageResource = NetworkResource(imageURL: metadata.downloadURL)
     }
 
     var body: some View {
-        List {
-            if imageResource.error != nil {
-                Button(action: imageResource.refresh) {
+        GeometryReader { (geometry: GeometryProxy) in
+            List {
+                PhotoDetailError(
+                    error: self.imageResource.error,
+                    performRetry: self.imageResource.refresh
+                )
+
+                PhotoDetailImage(
+                    metadata: self.metadata,
+                    image: self.imageResource.value
+                ).frame(maxHeight: geometry.size.height - 16)
+
+                PhotoDetailMetadata(metadata: self.metadata)
+            }
+            .navigationBarTitle("Details", displayMode: .inline)
+            .onAppear(perform: self.imageResource.refresh)
+            .onDisappear(perform: self.imageResource.cancel)
+        }
+    }
+}
+
+private struct PhotoDetailError: View {
+    var error: Error?
+    var performRetry: () -> Void
+
+    var body: some View {
+        Group {
+            if error != nil {
+                Button(action: performRetry) {
                     HStack {
                         Image(systemName: "xmark.octagon")
-                        Text(imageResource.error!.localizedDescription)
+                        Text(error!.localizedDescription)
                     }
                 }
                 .foregroundColor(.white)
                 .listRowBackground(Color.red)
             }
+        }
+    }
+}
 
-            ZStack {
-                Color(UIColor.secondarySystemBackground)
-                if imageResource.value != nil {
-                    Image(uiImage: imageResource.value!)
-                        .resizable()
-                }
-            }
-            .aspectRatio(CGFloat(metadata.width) / CGFloat(metadata.height), contentMode: .fit)
-            .cornerRadius(8)
+private struct PhotoDetailMetadata: View {
+    var metadata: PhotoMetadata
 
+    var body: some View {
+        Group {
             HStack {
                 Image(systemName: "person.fill")
                 Text(metadata.author)
@@ -71,8 +84,40 @@ struct PhotoDetail: View {
             })
             .foregroundColor(Color.accentColor)
         }
-        .navigationBarTitle("Details", displayMode: .inline)
-        .onAppear(perform: imageResource.refresh)
-        .onDisappear(perform: imageResource.cancel)
     }
 }
+
+private struct PhotoDetailImage: View {
+    let metadata: PhotoMetadata
+    let image: UIImage?
+
+    var body: some View {
+        HStack {
+            Spacer()
+            ZStack {
+                Color(UIColor.secondarySystemBackground)
+                if image != nil {
+                    Image(uiImage: image!)
+                        .resizable()
+                }
+            }
+            .aspectRatio(CGFloat(self.metadata.width) / CGFloat(self.metadata.height), contentMode: .fit)
+            .cornerRadius(8)
+            Spacer()
+        }
+    }
+}
+
+#if DEBUG
+
+struct PhotoDetail_Preview: PreviewProvider {
+    static var previews: some View {
+        Group {
+            PhotoDetail(metadata: .fixtureData)
+            PhotoDetail(metadata: .fixtureData)
+                .previewLayout(.fixed(width: 375, height: 400))
+        }
+    }
+}
+
+#endif

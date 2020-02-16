@@ -20,6 +20,7 @@
 		576CD04523F6BB0D000E18FC /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CD04423F6BB0D000E18FC /* StationList.swift */; };
 		576CD04723F6BFE9000E18FC /* PhotoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CD04623F6BFE9000E18FC /* PhotoDetail.swift */; };
 		576CD04923F6C595000E18FC /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CD04823F6C595000E18FC /* ActivityIndicator.swift */; };
+		576CD04C23F77636000E18FC /* URL+Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576CD04B23F77636000E18FC /* URL+Static.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		576CD04423F6BB0D000E18FC /* StationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationList.swift; sourceTree = "<group>"; };
 		576CD04623F6BFE9000E18FC /* PhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetail.swift; sourceTree = "<group>"; };
 		576CD04823F6C595000E18FC /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		576CD04B23F77636000E18FC /* URL+Static.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Static.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				576CD00E23F6B772000E18FC /* AppDelegate.swift */,
 				576CD01023F6B772000E18FC /* SceneDelegate.swift */,
+				576CD04A23F77625000E18FC /* Helpers */,
 				576CD03F23F6B806000E18FC /* Model */,
 				576CD03E23F6B7FB000E18FC /* Views */,
 				576CD01423F6B775000E18FC /* Assets.xcassets */,
@@ -165,6 +168,14 @@
 				576CD04223F6B8A8000E18FC /* NetworkResource.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		576CD04A23F77625000E18FC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				576CD04B23F77636000E18FC /* URL+Static.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				576CD04C23F77636000E18FC /* URL+Static.swift in Sources */,
 				576CD04523F6BB0D000E18FC /* StationList.swift in Sources */,
 				576CD00F23F6B772000E18FC /* AppDelegate.swift in Sources */,
 				576CD04323F6B8A8000E18FC /* NetworkResource.swift in Sources */,

@@ -22,3 +22,18 @@ struct PhotoMetadata: Decodable, Identifiable {
         case contentURL = "url"
     }
 }
+
+#if DEBUG
+
+extension PhotoMetadata {
+    static var fixtureData = PhotoMetadata(
+        id: "1003",
+        author: "E+N Photographies",
+        width: 1181,
+        height: 1772,
+        contentURL: URL(staticString: "https://unsplash.com/photos/U5rMrSI7Pn4"),
+        downloadURL: URL(staticString: "https://picsum.photos/id/1025/4951/3301")
+    )
+}
+
+#endif

@@ -61,3 +61,20 @@ extension NetworkResource where Value: Decodable {
         }
     }
 }
+
+struct ImageDecodingError: Error, LocalizedError {
+    var errorDescription: String? {
+        return "Unable to decode image data"
+    }
+}
+
+extension NetworkResource where Value == UIImage {
+    convenience init(imageURL: URL) {
+        self.init(url: imageURL) { data, response in
+            if let image = UIImage(data: data) {
+                return image
+            }
+            throw ImageDecodingError()
+        }
+    }
+}
